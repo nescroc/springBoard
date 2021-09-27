@@ -1,7 +1,14 @@
 package sen.spring.polymorphism;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("tv")
 public class LgTV implements TV {
-	
+	//autowired+qualifier 합친것
+	//@Resource(name="apple")
+	@Autowired
+	private Speaker speaker;
 	public LgTV() {
 		System.out.println("LgTV 객체 생성");
 	}
@@ -19,20 +26,12 @@ public class LgTV implements TV {
 
 	@Override
 	public void volumeUp() {
-		System.out.println("LgTV 볼륨을 올린다.");
+		speaker.volumeUp();
 
 	}
 
 	@Override
 	public void volumeDown() {
-		System.out.println("LgTV 볼륨을 내린다.");
-
-	}
-	
-	public void start() {
-		System.out.println("객체 초기화 작업 처리");
-	}
-	public void stop() {
-		System.out.println("객체 삭제 전에 처리할 로직 처리");
-	}
+		speaker.volumeDown();
+	}	
 }
