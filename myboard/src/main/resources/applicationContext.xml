@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="tv" class="sen.spring.polymorphism.SamsungTV" init-method="start" destroy-method="stop" scope="prototype"/>
-	<bean id="lg" class="sen.spring.polymorphism.LgTV"/>
-	<!-- <bean name="lgss" class="sen.spring.polymorphism.LgTV"/> -->
+	<!-- <bean id="tv" class="sen.spring.polymorphism.SamsungTV" c:speaker-ref="apple" c:price="7200000"/>	
+	<bean id="sony" class="sen.spring.polymorphism.SonySpeaker"/>
+	<bean id="apple" class="sen.spring.polymorphism.AppleSpeaker"/> -->
+	<!-- <bean id="lg" class="sen.spring.polymorphism.LgTV"/> -->
+	<bean id ="collectionBean" class="sen.spring.collection.CollectionBean">
+		<property name="addressList">
+			
+			<!-- <list>
+				<value>서울시 서초구 서초동</value>
+				<value>서울시 성북구 성북동</value>
+			</list> -->
+			
+			<!-- <map>
+				<entry>
+					<key><value>홍길동</value></key>
+					<value>율도국</value>
+				</entry>
+				<entry>
+					<key><value>손오공</value></key>
+					<value>화과산</value>
+				</entry>
+			</map> -->
+			
+			<!-- <props>
+				<prop key="홍길동">율도국</prop>
+				<prop key="나일성">성북동</prop>
+			</props> -->
+			<set value-type="java.lang.String">
+				<value>서울시 성북구 성북동</value>
+				<value>서울시 성북구 성북동</value>
+				<value>서울시 성북구 성북동</value>
+				<value>서울시 서초구 서초동</value>
+			</set>
+		</property>
+	</bean>	
 </beans>
