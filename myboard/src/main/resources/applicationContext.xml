@@ -7,11 +7,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<!-- <context:component-scan base-package="sen.spring.polymorphism">
+	 <context:component-scan base-package="sen.spring.web">
 	</context:component-scan>
-	<bean id="apple" class="sen.spring.polymorphism.AppleSpeaker"/> -->
-	<bean id="myLifeBean" class="sen.spring.lifecycle.MyLifeBeanImpl" init-method="init">
-		<property name="greeting"><value>Hello, </value></property>
+	<!-- <bean id ="userService" class="sen.spring.web.user.impl.UserServiceImpl">
+		<property name="userDAO" ref="userDAO"/>
 	</bean>
-	<bean class="sen.spring.lifecycle.CustomBeanPostProcessor"/>
+	 <bean id="userDAO" class="sen.spring.web.user.impl.UserDAO"></bean> -->
 </beans>
