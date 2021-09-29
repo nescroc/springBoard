@@ -11,7 +11,8 @@
 
 	 <context:component-scan base-package="sen.spring.web">
 	</context:component-scan>
-	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<!-- 
 	<bean id="afterThrowing" class="sen.spring.web.common.AfterThrowingAdvice"/>
 	<bean id="log" class="sen.spring.web.common.Log4jAdvice"/>
 	<bean id="before" class="sen.spring.web.common.BeforeAdvice"/>
@@ -26,9 +27,6 @@
 		</aop:aspect>
 		<aop:aspect ref="around">
 			<aop:around method="aroundLog" pointcut-ref="getPointcut"/>
-		</aop:aspect>
-		<!-- <aop:aspect ref="afterThrowing">
-			<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut"/>
-		</aop:aspect> -->
-	</aop:config>	
+		</aop:aspect>		
+	</aop:config> -->	
 </beans>
