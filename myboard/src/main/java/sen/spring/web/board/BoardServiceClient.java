@@ -14,6 +14,7 @@ public class BoardServiceClient {
 		BoardService boardService = (BoardService)container.getBean("boardService");
 		//3. 글 등록 기능 테스트
 		BoardVO vo = new BoardVO();
+		//vo.setSeq(1003);
 		vo.setTitle("123");
 		vo.setWriter("1일성");
 		vo.setContent("5빠따");
