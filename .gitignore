@@ -22,8 +22,14 @@ local.properties
 # External tool builders
 .externalToolBuilders/
 
+# Tomcat
+Servers
+
 # Locally stored "Eclipse launch configurations"
 *.launch
+
+#Spring-framework folder
+spring-framework-5.3.9
 
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
