@@ -1,11 +1,8 @@
 <%@page import="java.util.List"%>
-<%@page import="sen.spring.web.board.impl.BoardDAO"%>
 <%@page import="sen.spring.web.board.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	List<BoardVO> boardList = (List<BoardVO>)request.getAttribute("boardList");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,17 +18,15 @@
 	<form action="getBoardList.do" method="post">
 		<table border="1">
 			<tr>
-				<td> 
-					<select name="searchCondition">
+				<td><select name="searchCondition">
 						<option value="TITLE">제목</option>
 						<option value="CONTENT">내용</option>
-					</select>
-					<input type="text" name="searchKeyword">
-					<input type="submit" value="검색">
-				</td>
+				</select> <input type="text" name="searchKeyword"> <input
+					type="submit" value="검색"></td>
 			</tr>
 		</table>
-	</form><br>
+	</form>
+	<br>
 	<!-- 검색 종료 -->
 	<table border="1">
 		<tr>
@@ -41,16 +36,17 @@
 			<th>등록일</th>
 			<th>조회수</th>
 		</tr>
-	<% for(BoardVO board:boardList){%>
-	<tr>
-		<td><%=board.getSeq()%></td>
-		<td><a href="getBoard.do?seq=<%=board.getSeq()%>"><%=board.getTitle() %></a></td>
-		<td><%=board.getWriter()%></td>
-		<td><%=board.getRegDate()%></td>
-		<td><%=board.getCnt()%></td>
-	</tr>
-	<%} %>
-	</table><br>
+		<c:forEach var="board" items="${boardList }">
+			<tr>
+				<td>${board.seq }</td>
+				<td><a href="getBoard.do?seq=${board.seq }">${board.title }</a></td>
+				<td>${board.writer}</td>
+				<td>${board.regDate }</td>
+				<td>${board.cnt }</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<br>
 	<a href="insertBoard.jsp">새글 작성</a>
 </body>
 </html>
