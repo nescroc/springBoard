@@ -19,8 +19,7 @@ public class MainFour {
 			ArticleVO article2 = readArticleService.getArticleAndIncreaseReadCount(1);
 			System.out.println("article1 == article2 : " + (article1 == article2));
 			readArticleService.getArticleAndIncreaseReadCount(0);
-		} catch (ArticleNotFoundException e) {
-		}
+		} catch (ArticleNotFoundException e) {}
 		MemberService memberService = context.getBean("memberService", MemberService.class);
 		memberService.update("이승재", new UpdateInfo());
 		context.close();
