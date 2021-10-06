@@ -6,7 +6,9 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class PointcutCommon {
 	@Pointcut("execution(* sen.spring.web..*Impl.*(..))")
-	public void allPointcut() {}
+	public void allPointcut() {
+	}
 	@Pointcut("execution(* sen.spring.web..*Impl.get*(..))")
-	public void getPointcut() {}
+	public void getPointcut() {
+	}
 }

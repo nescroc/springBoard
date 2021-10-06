@@ -14,6 +14,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<context:property-placeholder location="classpath:config/database.properties"/>
+	
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 			<property name="driverClassName" value="${jdbc.driver}"/>
@@ -21,12 +22,15 @@
 			<property name="username" value="${jdbc.username}"/>
 			<property name="password" value="${jdbc.password}"/>
 	</bean>
+	
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
 			<tx:method name="get" read-only="true"/>
@@ -39,9 +43,8 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
 	</aop:config>
 	
-	 <context:component-scan base-package="sen.spring.web">
-	</context:component-scan>
-	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	 <context:component-scan base-package="sen.spring.web"></context:component-scan>
+
 	<!-- 
 	<bean id="afterThrowing" class="sen.spring.web.common.AfterThrowingAdvice"/>
 	<bean id="log" class="sen.spring.web.common.Log4jAdvice"/>
@@ -58,5 +61,5 @@
 		<aop:aspect ref="around">
 			<aop:around method="aroundLog" pointcut-ref="getPointcut"/>
 		</aop:aspect>		
-	</aop:config> -->	
+	</aop:config> 	 -->
 </beans>

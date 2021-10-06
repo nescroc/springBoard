@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import sen.spring.web.board.BoardVO;
 import sen.spring.web.common.JDBCUtil;
 

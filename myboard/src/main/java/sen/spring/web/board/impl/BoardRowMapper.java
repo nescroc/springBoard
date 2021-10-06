@@ -20,5 +20,4 @@ public class BoardRowMapper implements RowMapper<BoardVO> {
 		board.setCnt(rs.getInt("cnt"));		
 		return board;
 	}
-
 }
