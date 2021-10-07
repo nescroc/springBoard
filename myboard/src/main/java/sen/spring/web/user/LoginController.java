@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import sen.spring.web.user.impl.UserDAO;
-
 @Controller
 public class LoginController {
 	@Autowired
@@ -26,6 +24,9 @@ public class LoginController {
 	@RequestMapping(value = "/login.do", method = RequestMethod.POST)
 	public String login(UserVO vo,HttpSession session) {
 		System.out.println("로그인 인증 처리 : Method=POST");
+		if(vo.getId()==null||vo.getId().equals("")||vo.getPassword().equals("")||vo.getPassword()==null) {
+			throw new ArithmeticException("아이디를 입력해주세요.");
+		}
 		UserVO user = userService.getUser(vo);
 		if (user != null) {
 			session.setAttribute("userName", user.getName());

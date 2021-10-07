@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import sen.spring.web.board.BoardVO;
 import sen.spring.web.common.JDBCUtil;
 
-//@Repository("boardDAO")
 public class BoardDAO {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
@@ -20,14 +19,13 @@ public class BoardDAO {
 
 	private final String BOARD_INSERT = "insert into myboard(seq,title,writer,content)"
 			+ " values((select nvl(max(seq),0)+1 from myboard),?,?,?)";
-
 	private final String BOARD_UPDATE = "update myboard set title=?,content=? where seq=?";
-
 	private final String BOARD_DELETE = "delete myboard where seq=?";
-
 	private final String BOARD_GET = "select * from myboard where seq = ?";
-
-	private final String BOARD_LIST = "select * from myboard order by seq desc";
+	private final String BOARD_LIST_T = 
+			"select * from myboard where title like'%'||?||'%' order by seq desc";
+	private final String BOARD_LIST_C = 
+			"select * from myboard where content like'%'||?||'%' order by seq desc";
 
 	public void insertBoard(BoardVO vo) {
 		System.out.println("JDBC로 insertBoard()기능 처리");
@@ -107,7 +105,11 @@ public class BoardDAO {
 		List<BoardVO> boardList = new ArrayList<BoardVO>();
 		try {
 			conn = JDBCUtil.getConnection();
-			pstmt = conn.prepareStatement(BOARD_LIST);
+			if(vo.getSearchCondition().equals("TITLE"))
+				pstmt = conn.prepareStatement(BOARD_LIST_T);
+			else if(vo.getSearchCondition().equals("CONTENT"))
+				pstmt = conn.prepareStatement(BOARD_LIST_C);
+			pstmt.setString(1, vo.getSearchKeyword());
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				BoardVO board = new BoardVO();

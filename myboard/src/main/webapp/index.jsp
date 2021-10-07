@@ -7,12 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>게시판 프로그램</h1>
-	<hr>
-	<br>
-	<a href="login.do">로그인</a>
-	<br>
-		<a href="getBoardList.do">글 목록으로 가기</a>
-	<br>
+	<h1>게시판 프로그램</h1><hr><br>
+	<a href="login.do">로그인</a><br>
+	<a href="getBoardList.do">글 목록으로 가기</a><br>
+	<a href="dataTransform.do">글목록 변환 처리</a>
 </body>
 </html>
