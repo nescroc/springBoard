@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import sen.spring.web.board.BoardVO;
 
-@Repository("boardDAO")
+//@Repository("boardDAO")
 public class BoardDAOSpring {
 
 	@Autowired
