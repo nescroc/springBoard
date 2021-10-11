@@ -6,6 +6,8 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
+
 
 public class MyLifeBeanImpl implements MyLifeBean, BeanFactoryAware,
 		BeanNameAware, InitializingBean, DisposableBean {
