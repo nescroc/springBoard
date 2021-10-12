@@ -12,23 +12,28 @@ import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
 
-@Entity
-@Table(name="MYBOARD")
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+//@Entity
+//@Table(name="MYBOARD")
 public class BoardVO {
-	@Id
-	@GeneratedValue
+//	@Id
+//	@GeneratedValue
 	private int seq;
 	private String title;
 	private String writer;
 	private String content;
-	@Temporal(TemporalType.DATE)
+//	@Temporal(TemporalType.DATE)
 	private Date regDate;
 	private int cnt;
-	@Transient
+//	@Transient
+	@JsonIgnore
 	private String searchCondition;
-	@Transient
+//	@Transient
+	@JsonIgnore
 	private String searchKeyword;
-	@Transient
+//	@Transient
+	@JsonIgnore
 	private MultipartFile uploadFile;
 	
 	public int getSeq() {

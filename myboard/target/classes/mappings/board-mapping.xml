@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="BoardDAO">
+<mapper namespace="sen.spring.web.board.impl.BoardDAOMybatisInter">
 	<resultMap type="myboard" id="boardResult">
 		<id property="seq" column="SEQ"/>
 		<result property="title" column="TITLE"/>
@@ -12,8 +12,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	<insert id="insertBoard" parameterType="myboard">
 		<![CDATA[
-			INSERT INTO myboard (seq,title,writer,content)
-			VALUES((SELECT nvl(max(seq),0)+1 from myboard),#{title},#{writer},#{content})
+			INSERT INTO myboard (seq,title,writer,content,regdate)
+			VALUES((SELECT nvl(max(seq),0)+1 from myboard),#{title},#{writer},#{content},sysdate)
 		]]>
 	</insert>
 	<update id="updateBoard" parameterType="myboard">

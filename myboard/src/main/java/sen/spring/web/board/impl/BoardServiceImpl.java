@@ -12,7 +12,7 @@ import sen.spring.web.board.BoardVO;
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
-	private BoardDAOJPA boardDAO;
+	private BoardDAOMybatisInter boardDAO;
 
 	@Override 
 	public void insertBoard(BoardVO vo) {  

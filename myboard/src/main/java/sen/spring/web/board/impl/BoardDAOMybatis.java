@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import sen.spring.web.board.BoardVO;
 
-@Repository
+//@Repository
 public class BoardDAOMybatis {
-	@Autowired
+//	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 
 	public void insertBoard(BoardVO vo) {

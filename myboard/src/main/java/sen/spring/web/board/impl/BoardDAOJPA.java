@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import sen.spring.web.board.BoardVO;
 
-@Repository
+//@Repository
 public class BoardDAOJPA {
 
-		@PersistenceContext
+		//@PersistenceContext
 		private EntityManager manager;
 		
 		public void insertBoard(BoardVO vo) {
