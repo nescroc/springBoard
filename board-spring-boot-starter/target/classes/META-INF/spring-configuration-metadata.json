@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "board.jdbc",
+      "type": "tommy.spring.jdbc.config.JDBCConnectionManagerProperties",
+      "sourceType": "tommy.spring.jdbc.config.JDBCConnectionManagerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "board.jdbc.driver-class",
+      "type": "java.lang.String",
+      "sourceType": "tommy.spring.jdbc.config.JDBCConnectionManagerProperties"
+    },
+    {
+      "name": "board.jdbc.password",
+      "type": "java.lang.String",
+      "sourceType": "tommy.spring.jdbc.config.JDBCConnectionManagerProperties"
+    },
+    {
+      "name": "board.jdbc.url",
+      "type": "java.lang.String",
+      "sourceType": "tommy.spring.jdbc.config.JDBCConnectionManagerProperties"
+    },
+    {
+      "name": "board.jdbc.username",
+      "type": "java.lang.String",
+      "sourceType": "tommy.spring.jdbc.config.JDBCConnectionManagerProperties"
+    }
+  ],
+  "hints": []
+}
