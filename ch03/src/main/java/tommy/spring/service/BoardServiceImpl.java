@@ -39,6 +39,7 @@ public class BoardServiceImpl implements BoardService {
 			board.setContent(i+"번 내용입니다");
 			board.setCreateDate(new Date());
 			board.setCnt(0);
+			boardList.add(board);
 		}
 		return boardList;
 	}
