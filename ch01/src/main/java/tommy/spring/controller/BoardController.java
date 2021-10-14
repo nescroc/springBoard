@@ -2,7 +2,6 @@ package tommy.spring.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,7 @@ public class BoardController {
 		System.out.println("==========> BoardController 생성");
 	}
 	@GetMapping("/hello")
-	public String hello(String name) {
+	public String hello(String name) {	
 		return "Hello :"+name;
 	}
 	@GetMapping("/getBoard")
