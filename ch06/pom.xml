@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -10,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tommy.spring</groupId>
-	<artifactId>ch05</artifactId>
+	<artifactId>ch06</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ch05</name>
+	<name>ch06</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -48,7 +47,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-				<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-core</artifactId>
@@ -60,20 +68,7 @@
 		    <artifactId>hibernate-entitymanager</artifactId>
 		    <version>5.6.0.Final</version>
 		</dependency>
-				<!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa -->
-      <dependency>
-         <groupId>com.querydsl</groupId>
-         <artifactId>querydsl-jpa</artifactId>
-         <!-- <version>5.0.0</version> -->
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/com.querydsl/querydsl-apt -->
-      <dependency>
-         <groupId>com.querydsl</groupId>
-         <artifactId>querydsl-apt</artifactId>
-         <!-- <version>5.0.0</version> -->
-      </dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

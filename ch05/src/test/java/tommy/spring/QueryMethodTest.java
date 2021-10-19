@@ -16,28 +16,28 @@ import tommy.spring.persistence.BoardRepository;
 public class QueryMethodTest {
 	@Autowired
 	private BoardRepository boardRepo;
-	
+
 	/*
 	 * @Test public void dataPrepare() { for (int i = 1; i < 201; i++) { Board board
-	 * = new Board(); board.setTitle("test title"+ i); board.setWriter("tester");
-	 * board.setContent("test content "+i); board.setCreateDate(new Date());
+	 * = new Board(); board.setTitle("test title" + i); board.setWriter("tester");
+	 * board.setContent("test content " + i); board.setCreateDate(new Date());
 	 * board.setCnt(0L); boardRepo.save(board); } }
 	 */
-	
-	
+
 	/*
 	 * @Test public void testByTitleContainingOrderBySeqDesc() { List<Board>
 	 * boardList = boardRepo.findByTitleContainingOrderBySeqDesc("17");
 	 * System.out.println("검색결과"); for(Board board : boardList)
 	 * System.out.println(board.toString()); }
 	 */
+
+	//\
 	
-	@Test
-	public void testFindByTitleContaining() {		
-		Pageable paging = PageRequest.of(0, 5,Sort.Direction.DESC,"seq");
-		List<Board> boardList = boardRepo.findByTitleContaining("제목",paging);
-		System.out.println("검색결과");
-		for(Board board : boardList)
-			System.out.println("--->"+board.toString());
-	}	
+	/*
+	 * @Test public void testFindByTitleContaining() { Pageable paging =
+	 * PageRequest.of(0, 5, Sort.Direction.DESC, "seq"); List<Board> boardList =
+	 * boardRepo.findByTitleContaining("title", paging); System.out.println("검색결과");
+	 * for (Board board : boardList) System.out.println("--->" + board.toString());
+	 * }
+	 */
 }
