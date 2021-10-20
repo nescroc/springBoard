@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>메인페이지</title>
+</head>
+<body th:align="center">
+	<br>
+	<h3 th:align="center">게시판 프로그램 입니다.</h3>
+	<hr>
+	<p th:align="center">
+		<a href="getBoardList">글 목록 바로가기</a>
+	</p>
+	<p th:align="center">
+		<a href="login">로그인</a>
+	</p>
+	<br>
+	<p align="center">
+		<a href="boardError">BoardException 발생</a> &nbsp;&nbsp;&nbsp;
+		<a href="illegalArgumentError">IllegalArgumentError 발생</a>&nbsp;&nbsp;&nbsp;
+		<a href="sqlError">SqlError 발생</a>
+	</p>
+</body>
+</html>

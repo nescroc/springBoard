@@ -25,9 +25,10 @@ public class Board {
 	@Column(updatable = false)
 	private String writer;
 	private String content;
+	//@Temporal(value = TemporalType.TIMESTAMP)
 	@Column(insertable = false,updatable = false,columnDefinition = "date default sysdate")
 	private Date createDate;
 	@Column(insertable = false,updatable = false,columnDefinition = "number default 0")
 	private Long cnt;
-
 }
+ 

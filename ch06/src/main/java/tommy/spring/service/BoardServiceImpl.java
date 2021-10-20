@@ -20,7 +20,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public void insertBoard(Board board) {	
+	public void insertBoard(Board board) {
+		System.out.println(board.toString());
 		boardRepo.save(board);
 	}
 	
